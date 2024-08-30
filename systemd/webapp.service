@@ -1,0 +1,14 @@
+[Unit]
+Description=Starting the lite webapp ...
+After=network.target
+
+[Service]
+WorkingDirectory=/home/acrisan/github-repos/webapp
+Environment=PATH=/usr/bin:/usr/local/bin
+Restart=always
+User=acrisan
+Group=acrisan
+ExecStart=/home/acrisan/github-repos/webapp/app.js
+
+[Install]
+WantedBy=multi-user.target
