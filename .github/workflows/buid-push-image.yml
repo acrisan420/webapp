@@ -5,11 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  
-  permissions:
-    contents: read
-    packages: write
-    
+
   build-and-push:
 
     runs-on: ubuntu-latest
@@ -33,7 +29,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build the Docker image
-        run: docker build -t ghcr.io/webapp/${{ github.repository_owner }} .
+        run: docker build -t ghcr.io/${{ github.repository }} .
 
       - name: Push the Docker image
-        run: docker push ghcr.io/webapp/${{ github.repository_owner }}
+        run: docker push ghcr.io/${{ github.repository }}
