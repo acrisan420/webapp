@@ -6,10 +6,6 @@ on:
 
 jobs:
   
-  permissions:
-    contents: read
-    packages: write
-    
   build-and-push:
 
     runs-on: ubuntu-latest
